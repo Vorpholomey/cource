@@ -136,7 +136,7 @@ public class VariablesTheme {
         System.out.println("     сотен: " + decManipulationHungred );
         System.out.println("     десятков: " + decManipulationTens );
         System.out.println("     единиц: " + decManipulatonUnits );
-        System.out.println("Сумма разррядов: " + (decManipulationHungred + decManipulationTens + decManipulatonUnits));
+        System.out.println("Сумма разрядов: " + (decManipulationHungred + decManipulationTens + decManipulatonUnits));
         System.out.println("Произведение разрядов: "
                 + (decManipulationHungred * decManipulationTens * decManipulatonUnits));
 
