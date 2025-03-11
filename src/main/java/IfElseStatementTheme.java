@@ -29,7 +29,7 @@ public class IfElseStatementTheme {
         } else if (name == 'I') {
             System.out.println("Ваше имя начинается на I");
         } else {
-            System.out.println("Ваше имя не начиинается на М и I");
+            System.out.println("Ваше имя не начинается на М и I");
         }
 
         System.out.println("\n2. Поиск max и min числа");
@@ -68,9 +68,11 @@ public class IfElseStatementTheme {
         int equalsFirstNumber = 123;
         int equalsSecondNumber = 456;
 
-        if ((equalsFirstNumber / 100 != equalsSecondNumber / 100) && (equalsFirstNumber / 10 != equalsSecondNumber / 10)
+        if ((equalsFirstNumber / 100 != equalsSecondNumber / 100)
+                && (equalsFirstNumber / 10 != equalsSecondNumber / 10)
                 && (equalsFirstNumber % 10 != equalsSecondNumber % 10)) {
-            System.out.println("Число " + equalsFirstNumber + " и число " + equalsSecondNumber + " не имеют общих цифр");
+            System.out.println("Число " + equalsFirstNumber + " и число "
+                    + equalsSecondNumber + " не имеют общих цифр");
         } else {
             System.out.println("В числах " + equalsFirstNumber + " и " + equalsSecondNumber);
             if (equalsFirstNumber / 100 == equalsSecondNumber / 100) {
