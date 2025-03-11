@@ -66,22 +66,28 @@ public class IfElseStatementTheme {
 
         System.out.println("\n4. Поиск одинаковых цифр в числах");
         int equalsFirstNumber = 123;
-        int equalsSecondNumber = 456;
+        int equalsSecondNumber = 423;
+        int equalsFirstNumberHungred = equalsFirstNumber / 100;
+        int equalsFirstNumberTen = (equalsFirstNumber % 100) / 10;
+        int equalsFirstNumberUnit = (equalsFirstNumber % 100) % 10;
+        int equalsSecondNumberHungred = equalsSecondNumber / 100;
+        int equalsSecondNumberTen = (equalsSecondNumber % 100) / 10;
+        int equalsFSecondNumberUnit = (equalsSecondNumber % 100) % 10;
 
-        if ((equalsFirstNumber / 100 != equalsSecondNumber / 100)
-                && (equalsFirstNumber / 10 != equalsSecondNumber / 10)
-                && (equalsFirstNumber % 10 != equalsSecondNumber % 10)) {
+        if ((equalsFirstNumberHungred != equalsSecondNumberHungred)
+                && (equalsFirstNumberTen != equalsSecondNumberTen)
+                && (equalsFirstNumberUnit != equalsFSecondNumberUnit)) {
             System.out.println("Число " + equalsFirstNumber + " и число "
                     + equalsSecondNumber + " не имеют общих цифр");
         } else {
             System.out.println("В числах " + equalsFirstNumber + " и " + equalsSecondNumber);
-            if (equalsFirstNumber / 100 == equalsSecondNumber / 100) {
+            if (equalsFirstNumberHungred == equalsSecondNumberHungred) {
                 System.out.println("В сотнях имеются одинаковые цифры " + (equalsFirstNumber / 100));
             }
-            if ((equalsFirstNumber % 100) / 10 == (equalsSecondNumber % 100) / 10) {
+            if (equalsFirstNumberTen == equalsSecondNumberTen) {
                 System.out.println("В десятках имеются одинаковые цифры " + ((equalsFirstNumber % 100) / 10));
             }
-            if ((equalsFirstNumber % 100) % 10 == (equalsSecondNumber % 100) % 10) {
+            if (equalsFirstNumberUnit == equalsFSecondNumberUnit) {
                 System.out.println("В единицах имеются одинаковые цифры " + ((equalsFirstNumber % 100) % 10));
             }
         }
