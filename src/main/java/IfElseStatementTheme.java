@@ -155,7 +155,7 @@ public class IfElseStatementTheme {
         System.out.println("\n8. Расчет прибыли за год");
 
         int rentRoom = 5000;
-        int productSaleMonth = 14000;
+        int productSaleMonth = 15000;
         int productCost = 9000;
 
         int profitYear = productSaleMonth - productCost - rentRoom;
