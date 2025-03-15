@@ -73,11 +73,11 @@ public class CyclesTheme {
         System.out.println("\n4. Вывод чисел в несколько строк");
 
         int minValue = 1;
-        int maxValue = 30;
+        int maxValue = 24;
         int l = 0;
         for (int i = 1; i < maxValue; i++) {
             if (l == 5) {
-                System.out.println("");
+                System.out.println();
                 l = 0;
             }
             if ((minValue % 2) != 0) {
@@ -117,7 +117,7 @@ public class CyclesTheme {
             System.out.print("*");
             n++;
             if (n == 10) {
-                System.out.println("");
+                System.out.println();
                 n = 0;
             }
         }
@@ -146,6 +146,112 @@ public class CyclesTheme {
             }
             System.out.println();
         } while (o != 0);
+
+        System.out.println("\n 7. Отображение ASCII-символов");
+
+        String decimalHeader = "DECIMAL";
+        String characterHeader = "CHARACTER";
+        String descriptionHeader = "DESCRIPTION";
+
+
+        System.out.printf("%-10s %-10s %-20s%n", decimalHeader, characterHeader, descriptionHeader);
+        for (int code = 15; code <= 126; code++) {
+            char ch = (char) code;
+
+            if ((code < 48 && code % 2 != 0) || (code >= 97 && code <= 122 && code % 2 == 0)) {
+                String description = Character.getName(code);
+                System.out.printf("%-10d %-10c %-20s%n", code, ch, description);
+            }
+        }
+        System.out.println("\n 8. Проверка, является ли число палиндромом");
+
+        int palindromeValueOriginal = 1234321;
+        int palindromeValue = palindromeValueOriginal;
+        int palindromeResult = 0;
+
+        while (palindromeValue != 0) {
+            int digit = palindromeValue % 10;
+            palindromeResult = palindromeResult * 10 + digit;
+            palindromeValue /= 10;
+        }
+        if (palindromeValueOriginal == palindromeResult) {
+            System.out.println("Число " + palindromeValueOriginal + " является палиндромом");
+        } else {
+            System.out.println("Число " + palindromeValueOriginal + " не является палиндромом");
+        }
+        System.out.println("\n 9. Проверка, является ли число счастливым");
+        int happyDigitOriginal = 123123;
+        int happyDigit = happyDigitOriginal;
+        int happyDigitSum1 = 0;
+        int happyDigitSum2 = 0;
+        int digitNumber = 0;
+
+
+        while (digitNumber != 3) {
+            int digit = happyDigit % 10;
+            happyDigitSum1 += digit;
+            happyDigit /= 10;
+            digitNumber++;
+        }
+        digitNumber = 0;
+
+        while (digitNumber != 3) {
+            int digit = happyDigit % 10;
+            happyDigitSum2 += digit;
+            happyDigit /= 10;
+            digitNumber++;
+        }
+        if (happyDigitSum1 == happyDigitSum2) {
+            System.out.println("Число " + happyDigitOriginal + " является  счастливым\n" +
+                    "Сумма цифр ABC = " + happyDigitSum2 + ", а сумма DEF = " + happyDigitSum1);
+        } else {
+            System.out.println("Число " + happyDigitOriginal + " не является  счастливым\n" +
+                    "Сумма цифр ABC = " + happyDigitSum2 + ", а сумма DEF = " + happyDigitSum1);
+        }
+        System.out.println("\n10.Отображение таблицы умножения Пифагора");
+
+        int h = 0;
+        int result = 0;
+        for (int i = 1; i < 11; i++) {
+            for (int m = 1; m < 10; m++) {
+                if (i == 2) {
+                    System.out.printf("%4s", "-");
+                    h++;
+                    if (h == 1) {
+                        System.out.printf("%4s", "+");
+                    }
+                    if (h == 9) {
+                        System.out.println();
+                        h = 0;
+                    }
+                } else if (i == 1) {
+                    result = i * m;
+                    System.out.printf("%4d", result);
+                    h++;
+                    if (h == 1) {
+                        System.out.printf("%4s", "|");
+                    }
+                    if (h == 9) {
+                        System.out.println();
+                        h = 0;
+                    }
+                } else {
+                    result = (i - 1) * m;
+                    System.out.printf("%4d", result);
+                    h++;
+                    if (h == 1) {
+                        System.out.printf("%4s", "|");
+                    }
+                    if (h == 9) {
+                        System.out.println();
+                        h = 0;
+                    }
+                }
+
+            }
+
+        }
+
 
     }
 }
