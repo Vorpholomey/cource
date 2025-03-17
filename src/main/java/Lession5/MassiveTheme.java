@@ -1,8 +1,9 @@
 package Lession5;
 
 import java.util.Arrays;
+import java.util.Random;
 
-public class massiveTheme {
+public class MassiveTheme {
     public static void main(String[] args) {
         System.out.println("\n1. Создайте массив целых чисел и найдите его сумму.");
         int[] digits = {123, 333, 234, 455, 676, 3, 42, 3, 3};
@@ -102,11 +103,46 @@ public class massiveTheme {
             for (int j = 0; j < array[i].length; j++) {
                 arrayNewitem = arrayNewitem + array[i][j];
             }
-            arrayNew[i] = (double)arrayNewitem / array[i].length;
+            arrayNew[i] = (double) arrayNewitem / array[i].length;
             arrayNewitem = 0;
         }
         System.out.println("Массив из средних значений равен: " + Arrays.toString(arrayNew));
 
+
+        System.out.println("\n\n9.  Поиск максимальной суммы подмассива в неравномерном массиве.");
+
+        int[][] irregularArray = new int[7][];
+
+        Random random = new Random();
+        for (int i = 0; i < irregularArray.length; i++) {
+            int subArrayLength = random.nextInt(8) + 3; // Длина подмассива от 3 до 10
+            irregularArray[i] = new int[subArrayLength];
+            for (int j = 0; j < subArrayLength; j++) {
+                irregularArray[i][j] = random.nextInt(201) - 100; // Числа от -100 до 100
+            }
+        }
+        System.out.println("Исходный массив:");
+        for (int[] subArray : irregularArray) {
+            System.out.println(Arrays.toString(subArray));
+        }
+        int sums = 0;
+        int[] maxSums = new int[irregularArray.length];
+        for (int i = 0; i < irregularArray.length; i++) {
+            for (int j = 0; j < irregularArray[i].length; j++) {
+                sums = sums + irregularArray[i][j];
+            }
+            maxSums[i] = sums;
+            sums = 0;
+        }
+        System.out.println("\nМассив сумм подмассивов: " + Arrays.toString(maxSums));
+
+        int maxSum = Arrays.stream(maxSums).max().getAsInt();
+        int minSum = Arrays.stream(maxSums).min().getAsInt();
+        double averageSum = Arrays.stream(maxSums).average().orElse(0);
+
+        System.out.println("\nМаксимальная сумма: " + maxSum);
+        System.out.println("Минимальная сумма: " + minSum);
+        System.out.println("Средняя сумма: " + averageSum);
 
     }
 }
