@@ -4,8 +4,8 @@ public class Calculator {
     public static void main(String[] args) {
         // Вводим значения математических операций +, -, *, /, ^, %
         double a = 2;
-        double b = 12;
-        char sign = '^';
+        double b = 0;
+        char sign = '%';
 
         if (sign == '+') {
             double result = a + b;
@@ -27,10 +27,13 @@ public class Calculator {
                 System.out.println("На ноль делить нельзя");
             }
         }
-
         if (sign == '%') {
-            double result = a % b;
-            System.out.println(a + " " + sign + " " + b + " = " + result);
+            if (b != 0) {
+                double result = a % b;
+                System.out.println(a + " " + sign + " " + b + " = " + result);
+            } else {
+                System.out.println("На ноль делить нельзя");
+            }
         }
         if (sign == '^') {
             if (b != 0) {
