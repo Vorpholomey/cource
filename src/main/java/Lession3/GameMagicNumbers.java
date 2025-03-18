@@ -7,7 +7,6 @@ public class GameMagicNumbers {
         int mid = 0;
         int left = 1;
         int right = 100;
-
         while (targetNumber != mid) {
             mid = left + (right - left) / 2;
             if (mid > targetNumber) {
@@ -15,9 +14,8 @@ public class GameMagicNumbers {
                 System.out.println("Число " + mid + " больше того, что загадал компьютер");
             } else {
                 left = mid + 1;
-                System.out.println("Число " + mid + " меньше того, что загадал компьютер");;
+                System.out.println("Число " + mid + " меньше того, что загадал компьютер");
             }
         } System.out.println("Вы победили! Искомое число: " + mid );
-
     }
 }
