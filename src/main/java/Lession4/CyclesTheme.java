@@ -1,10 +1,4 @@
 package Lession4;
-
-import org.w3c.dom.ls.LSOutput;
-
-import javax.swing.plaf.synth.SynthOptionPaneUI;
-import java.util.jar.JarOutputStream;
-
 public class CyclesTheme {
     public static void main(String[] args) {
         System.out.println("1. Подсчет суммы четных и нечетных чисел: \n");
@@ -22,15 +16,12 @@ public class CyclesTheme {
             start++;
         } while (start != end + 1);
         System.out.println("В отрезке [" + begin + ", " + end + "] сумма четных чисел = " + summEven + ", а нечетных = " + summOdd);
-
-
         System.out.println("\n2. Вывод чисел в порядке убывания:");
         int firstValue = 10;
         int secondValue = 5;
         int thirdValue = -1;
         int max = 0;
         int min = 0;
-
         if (firstValue > secondValue) {
             max = firstValue;
         } else {
@@ -39,8 +30,6 @@ public class CyclesTheme {
         if (max < thirdValue) {
             max = thirdValue;
         }
-
-
         if (firstValue < secondValue) {
             min = firstValue;
         } else {
@@ -50,28 +39,24 @@ public class CyclesTheme {
             min = thirdValue;
         }
         System.out.println("max " + max + " min " + min);
-
         System.out.print("Числа в интервале (" + min + ", " + max + ") в порядке убывания: ");
         for (int i = max - 1; i > min; i--) {
             System.out.print(i + " ");
         }
-
         System.out.println("\n\n3. Вывод реверсивного числа и суммы его цифр");
         int reversValue = 1234;
         int reversResult = 0;
         int summDigit = 0;
-
         while (reversValue != 0) {
             int digit = reversValue % 10;
             reversResult = reversResult * 10 + digit;
             summDigit += digit;
             reversValue /= 10;
         }
+        System.out.println("Исходное число: " + reversValue);
         System.out.println("Исходное число в обратном порядке: " + reversResult);
         System.out.println("Сума цифр числа: " + summDigit);
-
         System.out.println("\n4. Вывод чисел в несколько строк");
-
         int minValue = 1;
         int maxValue = 24;
         int l = 0;
@@ -97,7 +82,6 @@ public class CyclesTheme {
         int j = 0;
         while (dualValue != 0) {
             int digit5 = dualValue % 10;
-
             if (digit5 == 2) {
                 j++;
             }
@@ -108,7 +92,6 @@ public class CyclesTheme {
         } else {
             System.out.println("В " + dualValueOriginal + " двоек равно четное количество");
         }
-
         System.out.printf("\n6. Отображение геометрических фигур\n");
         int n = 0;
         int k = 5;
@@ -137,7 +120,6 @@ public class CyclesTheme {
             System.out.println();
             o++;
         } while (o != 3);
-
         o--;
         do {
             o--;
@@ -146,14 +128,10 @@ public class CyclesTheme {
             }
             System.out.println();
         } while (o != 0);
-
         System.out.println("\n 7. Отображение ASCII-символов");
-
         String decimalHeader = "DECIMAL";
         String characterHeader = "CHARACTER";
         String descriptionHeader = "DESCRIPTION";
-
-
         System.out.printf("%-10s %-10s %-20s%n", decimalHeader, characterHeader, descriptionHeader);
         for (int code = 15; code <= 126; code++) {
             char ch = (char) code;
@@ -164,11 +142,9 @@ public class CyclesTheme {
             }
         }
         System.out.println("\n 8. Проверка, является ли число палиндромом");
-
         int palindromeValueOriginal = 1234321;
         int palindromeValue = palindromeValueOriginal;
         int palindromeResult = 0;
-
         while (palindromeValue != 0) {
             int digit = palindromeValue % 10;
             palindromeResult = palindromeResult * 10 + digit;
@@ -185,8 +161,6 @@ public class CyclesTheme {
         int happyDigitSum1 = 0;
         int happyDigitSum2 = 0;
         int digitNumber = 0;
-
-
         while (digitNumber != 3) {
             int digit = happyDigit % 10;
             happyDigitSum1 += digit;
@@ -194,7 +168,6 @@ public class CyclesTheme {
             digitNumber++;
         }
         digitNumber = 0;
-
         while (digitNumber != 3) {
             int digit = happyDigit % 10;
             happyDigitSum2 += digit;
@@ -209,7 +182,6 @@ public class CyclesTheme {
                     "Сумма цифр ABC = " + happyDigitSum2 + ", а сумма DEF = " + happyDigitSum1);
         }
         System.out.println("\n10.Отображение таблицы умножения Пифагора");
-
         int h = 0;
         int result = 0;
         for (int i = 1; i < 11; i++) {
@@ -247,11 +219,7 @@ public class CyclesTheme {
                         h = 0;
                     }
                 }
-
             }
-
         }
-
-
     }
 }
