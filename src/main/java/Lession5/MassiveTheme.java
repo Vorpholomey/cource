@@ -24,17 +24,17 @@ public class MassiveTheme {
         System.out.println("\n\n3. Создайте массив целых чисел и найдите минимальное и максимальное значение в нем.");
         int digitsMax = digits[0];
         int digitsMin = digits[0];
-        for (int i = 0; i < digits.length; i++) {
-            if (digitsMax < digits[i]) {
-                digitsMax = digits[i];
+        for (int digit : digits) {
+            if (digitsMax < digit) {
+                digitsMax = digit;
             }
-            if (digitsMin > digits[i]) {
-                digitsMin = digits[i];
+            if (digitsMin > digit) {
+                digitsMin = digit;
             }
 
         }
-        System.out.println("Максимальное значение масиисва: " + digitsMax);
-        System.out.println("Минимальное значение масиисва: " + digitsMin);
+        System.out.println("Максимальное значение массива: " + digitsMax);
+        System.out.println("Минимальное значение массива: " + digitsMin);
 
         System.out.println("\n\n4. Создайте массив целых чисел и отсортируйте его по возрастанию.");
 
@@ -51,23 +51,23 @@ public class MassiveTheme {
             System.out.print(digits[i] + " ");
         }
         System.out.println("\n\n5. Создайте двумерный массив и выведите на экран сумму каждой строки.");
-        int[][] digits2d = {{1, 5, 8, 9}, {8, 66, 54, 8}, {96, 12, 11, 2}};
-        int digits2dSumm = 0;
-        for (int i = 0; i < digits2d.length; i++) {
-            for (int j = 0; j < digits2d[i].length; j++) {
-                digits2dSumm = digits2dSumm + digits2d[i][j];
+        int[][] digits2dMassive = {{1, 5, 8, 9}, {8, 66, 54, 8}, {96, 12, 11, 2}};
+        int digits2dMassiveSumm = 0;
+        for (int i = 0; i < digits2dMassive.length; i++) {
+            for (int j = 0; j < digits2dMassive[i].length; j++) {
+                digits2dMassiveSumm = digits2dMassiveSumm + digits2dMassive[i][j];
             }
-            System.out.println("Сумма " + i + " строки массива равна : " + digits2dSumm);
-            digits2dSumm = 0;
+            System.out.println("Сумма " + i + " строки массива равна : " + digits2dMassiveSumm);
+            digits2dMassiveSumm = 0;
         }
 
         System.out.println("\n\n6. Создайте двумерный массив и найдите наименьший элемент в каждом столбце.");
 
-        for (int i = 0; i < digits2d[0].length; i++) {
-            digitsMin = digits2d[0][i];
-            for (int j = 0; j < digits2d.length; j++) {
-                if (digitsMin > digits2d[j][i]) {
-                    digitsMin = digits2d[j][i];
+        for (int i = 0; i < digits2dMassive[0].length; i++) {
+            digitsMin = digits2dMassive[0][i];
+            for (int j = 0; j < digits2dMassive.length; j++) {
+                if (digitsMin > digits2dMassive[j][i]) {
+                    digitsMin = digits2dMassive[j][i];
                 }
             }
             System.out.println("Наименьшее чило в столбце " + i + " равна : " + digitsMin);
