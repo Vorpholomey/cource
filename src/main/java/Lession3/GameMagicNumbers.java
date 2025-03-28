@@ -5,7 +5,7 @@ public class GameMagicNumbers {
         // берем 100/2 =50  50/2=25 (50-25 или 20+25) (25/2=12)(75-12)
         int targetNumber = 76;
         int mid = 0;
-        int left = 1;
+ё           int left = 1;
         int right = 100;
         while (targetNumber != mid) {
             mid = left + (right - left) / 2;
