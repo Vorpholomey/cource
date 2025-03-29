@@ -24,12 +24,12 @@ public class MassiveTheme {
         System.out.println("\n\n3. Создайте массив целых чисел и найдите минимальное и максимальное значение в нем.");
         int digitsMax = digits[0];
         int digitsMin = digits[0];
-        for (int i = 0; i < digits.length; i++) {
-            if (digitsMax < digits[i]) {
-                digitsMax = digits[i];
+        for (int digit : digits) {
+            if (digitsMax < digit) {
+                digitsMax = digit;
             }
-            if (digitsMin > digits[i]) {
-                digitsMin = digits[i];
+            if (digitsMin > digit) {
+                digitsMin = digit;
             }
 
         }
