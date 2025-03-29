@@ -15,14 +15,12 @@ public class StringTheme {
 
         searchMinMax(firstSentence, secondSentence, thirdSentence, fourthSentence);
 
-
         System.out.println("\n2. Напишите программу, которая переписывает строки в обратном порядке, " +
                 "используя StringBuilder.\n");
         reverseString(firstSentence);
         reverseString(secondSentence);
         reverseString(thirdSentence);
         reverseString(fourthSentence);
-
 
         System.out.println("\n3. Напишите программу, которая  проверяет является ли строка палиномом.\n");
 
