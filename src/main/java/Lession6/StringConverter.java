@@ -1,11 +1,14 @@
 package Lession6;
 
+import java.util.Arrays;
+
 public class StringConverter {
+   //Печать строк наоборот, реверс строки
     public static void reverseString(String string) {
         StringBuilder stringBuilder = new StringBuilder(string);
         System.out.println(stringBuilder.reverse());
     }
-
+//Метод проверки на полином
     public static void checkForPalynome(String string) {
         String clearString = "";
         StringBuilder stringBuilder = new StringBuilder(string);
@@ -31,6 +34,14 @@ public class StringConverter {
         } else {
             System.out.println("Строка не является палиномом");
         }
-
     }
+    //Метод возвращения слов из массива строк
+    public static void returnMassiveWord(String[] stringArrays) {
+        for (String stringArray : stringArrays) {
+            String[] partsWord = stringArray.split(" ");
+            System.out.println("Количество слов в строке: " + partsWord.length);
+            System.out.println("Слова в строке: " + Arrays.toString(partsWord));
+        }
+    }
+
 }

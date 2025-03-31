@@ -69,18 +69,32 @@ public class StringTheme {
 
         EmployeeProcessor.editEmployer(employeeNames);
 
-        System.out.println("\n5. Код, который принимает строки,  " +
+        System.out.println("\n6. Код, который принимает строки,  " +
                 "и возвращает массив слов, из которых состоит строка, а так же количество слов в строке\n");
-        returnMassiveWord(stringArrays);
+        StringConverter.returnMassiveWord(stringArrays);
+
+        System.out.println("\n7. Напишите код, который в массиве строк находит пустую и " +
+                "пишет на какой позиции она находится\n");
+        String firstSentenceWithNull = "Менеджер, программист  и тестировщик попали в ДТП, " +
+                "несясь с горы, из-за отказа  тормозов";
+        String secondSentenceWithNull = ("Менеджер предложил  сформировать группу обсуждения  проблемы с тормозами");
+        String thirdSentenceWithNull = (" Программист  предложил проверить  каждый винтик");
+        String fourthSentenceWithNull = ("Тестировщик предложил затолкать машину  в гору и повторить  баг");
+        String[] arrayWithNullStrings = {firstSentenceWithNull, secondSentenceWithNull, thirdSentenceWithNull,
+                fourthSentenceWithNull};
+        findEmptyStrings(arrayWithNullStrings);
     }
 
-    public static void returnMassiveWord(String[] stringArrays) {
+    public static void findEmptyStrings(String[] stringArrays) {
         for (String stringArray : stringArrays) {
+            System.out.print("\nВ строке\n" + stringArray + "\n" + "Пустые сроки под индексами: ");
             String[] partsWord = stringArray.split(" ");
-            System.out.println("Количество слов в строке: " + partsWord.length);
-            System.out.println("Слова в строке: " + Arrays.toString(partsWord));
+            for (int i = 0; i < partsWord.length; i++) {
+                if (partsWord[i] == " " || partsWord[i] == null || partsWord[i] == "") {
+                    System.out.print(i + " ");
+                }
+            }
         }
     }
-
 }
 
