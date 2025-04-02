@@ -83,6 +83,12 @@ public class StringTheme {
         String[] arrayWithNullStrings = {firstSentenceWithNull, secondSentenceWithNull, thirdSentenceWithNull,
                 fourthSentenceWithNull};
         findEmptyStrings(arrayWithNullStrings);
+
+        System.out.println("\n8. апишите метод, который принимает строку и заменяет все " +
+                "вхождения одной подстроки на другую\n");
+
+        replacesSomeStrings(arrayWithNullStrings," " ,"$$$");
+        replacesSomeStrings(arrayWithNullStrings,"про" ,"№№№");
     }
 
     public static void findEmptyStrings(String[] stringArrays) {
@@ -95,6 +101,18 @@ public class StringTheme {
                 }
             }
         }
+    }
+
+    public static void replacesSomeStrings(String[] stringForReplace,String foundetLine, String replaysedString) {
+        for (String string : stringForReplace) {
+            StringBuilder stringBuilder = new StringBuilder(string);
+            while (stringBuilder.indexOf(foundetLine) >= 0) {
+                stringBuilder.insert(stringBuilder.indexOf(foundetLine), replaysedString);
+                stringBuilder.deleteCharAt(stringBuilder.indexOf(foundetLine));
+            }
+            System.out.println(stringBuilder.toString());
+        }
+
     }
 }
 
