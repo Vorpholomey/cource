@@ -17,6 +17,7 @@ public class StringCharachterCount {
             System.out.println("6. Строка в нижнем регистре: " + stringArray.toLowerCase());
         }
     }
+
     private static int countDigits(String str) {
         int count = 0;
         for (char c : str.toCharArray()) {
@@ -57,6 +58,4 @@ public class StringCharachterCount {
         }
         return count;
     }
-
-
 }

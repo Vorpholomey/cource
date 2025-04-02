@@ -3,12 +3,13 @@ package Lession6;
 import java.util.Arrays;
 
 public class StringConverter {
-   //Печать строк наоборот, реверс строки
+    //Печать строк наоборот, реверс строки
     public static void reverseString(String string) {
         StringBuilder stringBuilder = new StringBuilder(string);
         System.out.println(stringBuilder.reverse());
     }
-//Метод проверки на полином
+
+    //Метод проверки на полином
     public static void checkForPalynome(String string) {
         String clearString = "";
         StringBuilder stringBuilder = new StringBuilder(string);
@@ -35,6 +36,7 @@ public class StringConverter {
             System.out.println("Строка не является палиномом");
         }
     }
+
     //Метод возвращения слов из массива строк
     public static void returnMassiveWord(String[] stringArrays) {
         for (String stringArray : stringArrays) {
@@ -44,4 +46,29 @@ public class StringConverter {
         }
     }
 
+    //Метод ищет пустые строки и отображает их номера
+    public static void findEmptyStrings(String[] stringArrays) {
+        for (String stringArray : stringArrays) {
+            System.out.print("\nВ строке\n" + stringArray + "\n" + "Пустые сроки под индексами: ");
+            String[] partsWord = stringArray.split(" ");
+            for (int i = 0; i < partsWord.length; i++) {
+                if (partsWord[i] == " " || partsWord[i] == null || partsWord[i] == "") {
+                    System.out.print(i + " ");
+                }
+            }
+        }
+    }
+
+    // Метод ищет подстроку в массиве строк и заменяет на введенную подстроку
+    public static void replacesSomeStrings(String[] stringForReplace, String foundedLine, String replaysedString) {
+        for (String string : stringForReplace) {
+            StringBuilder stringBuilder = new StringBuilder(string);
+            while (stringBuilder.indexOf(foundedLine) >= 0) {
+                stringBuilder.insert(stringBuilder.indexOf(foundedLine), replaysedString);
+                stringBuilder.deleteCharAt(stringBuilder.indexOf(foundedLine));
+            }
+            System.out.println(stringBuilder.toString());
+        }
+
+    }
 }

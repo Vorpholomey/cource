@@ -10,7 +10,6 @@ public class SearchMinMax {
 
 
         //Разбиваем на группы и ищем мин макс в первой группе
-
         if (firstSentence.length() > secondSentence.length()) {
             maxStringFirstGroup = firstSentence;
             minStringFirstGroup = secondSentence;
@@ -21,7 +20,6 @@ public class SearchMinMax {
         }
 
         //Разбиваем на группы и ищем мин макс во второй группе
-
         if (thirdSentence.length() > fourthSentence.length()) {
             maxStringSecondtGroup = thirdSentence;
             minStringSecondtGroup = fourthSentence;
@@ -31,7 +29,6 @@ public class SearchMinMax {
         }
 
         //Найденные мин и макс в первой и во второй группах сравниваем между собой
-
         if (maxStringFirstGroup.length() > maxStringSecondtGroup.length()) {
             System.out.println(maxStringFirstGroup + "\n имеет максимальное количество символов равный "
                     + maxStringFirstGroup.length());

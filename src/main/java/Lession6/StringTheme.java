@@ -1,11 +1,7 @@
 package Lession6;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
 public class StringTheme {
     public static void main(String[] args) {
-
 
         System.out.println("\n1. Напишите программу, которая выводит строку и ее длину. ");
         String firstSentence = "Менеджер, программист и тестировщик попали в ДТП, " +
@@ -82,37 +78,13 @@ public class StringTheme {
         String fourthSentenceWithNull = ("Тестировщик предложил затолкать машину  в гору и повторить  баг");
         String[] arrayWithNullStrings = {firstSentenceWithNull, secondSentenceWithNull, thirdSentenceWithNull,
                 fourthSentenceWithNull};
-        findEmptyStrings(arrayWithNullStrings);
+        StringConverter.findEmptyStrings(arrayWithNullStrings);
 
         System.out.println("\n8. апишите метод, который принимает строку и заменяет все " +
                 "вхождения одной подстроки на другую\n");
 
-        replacesSomeStrings(arrayWithNullStrings," " ,"$$$");
-        replacesSomeStrings(arrayWithNullStrings,"про" ,"№№№");
-    }
-
-    public static void findEmptyStrings(String[] stringArrays) {
-        for (String stringArray : stringArrays) {
-            System.out.print("\nВ строке\n" + stringArray + "\n" + "Пустые сроки под индексами: ");
-            String[] partsWord = stringArray.split(" ");
-            for (int i = 0; i < partsWord.length; i++) {
-                if (partsWord[i] == " " || partsWord[i] == null || partsWord[i] == "") {
-                    System.out.print(i + " ");
-                }
-            }
-        }
-    }
-
-    public static void replacesSomeStrings(String[] stringForReplace,String foundetLine, String replaysedString) {
-        for (String string : stringForReplace) {
-            StringBuilder stringBuilder = new StringBuilder(string);
-            while (stringBuilder.indexOf(foundetLine) >= 0) {
-                stringBuilder.insert(stringBuilder.indexOf(foundetLine), replaysedString);
-                stringBuilder.deleteCharAt(stringBuilder.indexOf(foundetLine));
-            }
-            System.out.println(stringBuilder.toString());
-        }
-
+        StringConverter.replacesSomeStrings(arrayWithNullStrings, " ", "$$$");
+        StringConverter.replacesSomeStrings(arrayWithNullStrings, "про", "№№№");
     }
 }
 
