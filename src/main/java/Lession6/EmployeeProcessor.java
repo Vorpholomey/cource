@@ -6,12 +6,12 @@ import java.util.Set;
 
 public class EmployeeProcessor {
 
-    public static void editEmployer(String[] stringArrays) {
-        sortStringArrays(stringArrays);
-        printInitials(stringArrays);
-        searchVowelSurnames(stringArrays);
-        searchNameEndingInConsonant(stringArrays);
-        printNamesWithoutDuplicateChars(stringArrays);
+    public static void editEmployer(String[] employees) {
+        sortStringArrays(employees);
+        printInitials(employees);
+        searchVowelSurnames(employees);
+        searchNameEndingInConsonant(employees);
+        printNamesWithoutDuplicateChars(employees);
     }
 
     //Метод вывода отсортированного списка
@@ -28,9 +28,10 @@ public class EmployeeProcessor {
         for (String stringArray : stringArrays) {
             String[] partsName = stringArray.split(" ");
             String surname = partsName[0];
-            char firsnameInitial = partsName[1].charAt(0);
-            char secondnameinitial = partsName[2].charAt(0);
-            System.out.println(surname + " " + firsnameInitial + "." + secondnameinitial + ".");
+            char firstnameInitial;
+            firstnameInitial = partsName[1].charAt(0);
+            char secondNameInitial = partsName[2].charAt(0);
+            System.out.println(surname + " " + firstnameInitial + "." + secondNameInitial + ".");
         }
     }
 

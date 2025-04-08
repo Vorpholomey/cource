@@ -4,36 +4,45 @@ import java.util.Arrays;
 
 public class StringConverter {
     //Печать строк наоборот, реверс строки
-    public static void reverseString(String string) {
-        StringBuilder stringBuilder = new StringBuilder(string);
-        System.out.println(stringBuilder.reverse());
+    public static void reverseString(String[] stringArray) {
+        for (String string : stringArray) {
+            StringBuilder stringBuilder = new StringBuilder(string);
+            System.out.println(stringBuilder.reverse());
+        }
     }
 
     //Метод проверки на полином
-    public static void checkForPalynome(String string) {
+    public static void checkForPolynomial(String[] stringArrays) {
         String clearString = "";
-        StringBuilder stringBuilder = new StringBuilder(string);
-        Boolean isPalindrom = true;
-        for (int i = 0; i < string.length(); i++) {
-            if (stringBuilder.charAt(i) != ' ' && stringBuilder.charAt(i) != ',') {
-                clearString = clearString + stringBuilder.charAt(i);
+        String[] clearStringArray = new String[stringArrays.length];
+        for (int j = 0; j < stringArrays.length; j++) {
+            StringBuilder stringBuilder = new StringBuilder(stringArrays[j]);
+            for (int i = 0; i < stringArrays[j].length(); i++) {
+                if (stringBuilder.charAt(i) != ' ' && stringBuilder.charAt(i) != ',') {
+                    clearString = clearString + stringBuilder.charAt(i);
+                }
             }
+            clearStringArray[j] = clearString;
+            clearString = "";
         }
-        StringBuilder stringBuilder1 = new StringBuilder(clearString);
-        int leftItemString = 0;
-        int rightItemString = stringBuilder1.length() - 1;
-        while (leftItemString < rightItemString) {
-            if (stringBuilder1.charAt(leftItemString) != stringBuilder1.charAt(rightItemString)) {
-                isPalindrom = false;
-                break;
+        for (String string : clearStringArray) {
+            boolean isPalindrome = true;
+            StringBuilder stringBuilder = new StringBuilder(string);
+            int leftItemString = 0;
+            int rightItemString = stringBuilder.length() - 1;
+            while (leftItemString < rightItemString) {
+                if (stringBuilder.charAt(leftItemString) != stringBuilder.charAt(rightItemString)) {
+                    isPalindrome = false;
+                    break;
+                }
+                leftItemString++;
+                rightItemString--;
             }
-            leftItemString++;
-            rightItemString--;
-        }
-        if (isPalindrom) {
-            System.out.println("Строка является палиномом");
-        } else {
-            System.out.println("Строка не является палиномом");
+            if (isPalindrome) {
+                System.out.println("Строка является палиномом");
+            } else {
+                System.out.println("Строка не является палиномом");
+            }
         }
     }
 
@@ -52,7 +61,7 @@ public class StringConverter {
             System.out.print("\nВ строке\n" + stringArray + "\n" + "Пустые сроки под индексами: ");
             String[] partsWord = stringArray.split(" ");
             for (int i = 0; i < partsWord.length; i++) {
-                if (partsWord[i] == " " || partsWord[i] == null || partsWord[i] == "") {
+                if (partsWord[i].equals(" ") || partsWord[i] == null || partsWord[i].isEmpty()) {
                     System.out.print(i + " ");
                 }
             }
@@ -67,7 +76,7 @@ public class StringConverter {
                 stringBuilder.insert(stringBuilder.indexOf(foundedLine), replaysedString);
                 stringBuilder.deleteCharAt(stringBuilder.indexOf(foundedLine));
             }
-            System.out.println(stringBuilder.toString());
+            System.out.println(stringBuilder);
         }
 
     }

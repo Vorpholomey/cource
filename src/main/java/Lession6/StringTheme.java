@@ -1,42 +1,36 @@
 package Lession6;
 
+import static Lession6.EmployeeProcessor.editEmployer;
+import static Lession6.SearchMinMax.searchMinMax;
+import static Lession6.StringCharacterCount.changeStringArrays;
+import static Lession6.StringConverter.checkForPolynomial;
+import static Lession6.StringConverter.reverseString;
+
 public class StringTheme {
     public static void main(String[] args) {
 
         System.out.println("\n1. Напишите программу, которая выводит строку и ее длину. ");
         String firstSentence = "Менеджер, программист и тестировщик попали в ДТП, " +
                 "несясь с горы, из-за отказа тормозов";
-        String secondSentence = ("Менеджер предложил сформировать группу обсуждения проблемы с тормозами");
-        String thirdSentence = ("Программист предложил проверить каждый винтик");
-        String fourthSentence = ("Тестировщик предложил затолкать машину в гору и повторить баг");
+        String secondSentence = "Менеджер предложил сформировать группу обсуждения проблемы с тормозами";
+        String thirdSentence = "Программист предложил проверить каждый винтик";
+        String fourthSentence = "Тестировщик предложил затолкать машину в гору и повторить баг";
+        String[] sentences = new String[]{firstSentence, secondSentence, thirdSentence, fourthSentence};
+        searchMinMax(sentences);
 
-        SearchMinMax.searchMinMax(firstSentence, secondSentence, thirdSentence, fourthSentence);
-
-        System.out.println("\n2. Напишите программу, которая переписывает строки в обратном порядке, " +
+        System.out.println("2. Напишите программу, которая переписывает строки в обратном порядке, " +
                 "используя StringBuilder.\n");
-        StringConverter.reverseString(firstSentence);
-        StringConverter.reverseString(secondSentence);
-        StringConverter.reverseString(thirdSentence);
-        StringConverter.reverseString(fourthSentence);
+        reverseString(sentences);
 
-        System.out.println("\n3. Напишите программу, которая  проверяет является ли строка палиномом.\n");
+        System.out.println("3. Напишите программу, которая  проверяет является ли строка палиномом.\n");
+        String[] polynomialWords = {"Ежу хуже","Лев осовел","кошмар, срам, шок","кирилл лирик"};
+        checkForPolynomial(polynomialWords);
 
-        String firstPolynomeWord = "Ежу хуже";
-        String secondPolynomeWord = "Лев осовел";
-        String thirdPolynomeWord = "кошмар, срам, шок";
-        String fourthPolynomeWord = "кирилл лирик";
-
-        StringConverter.checkForPalynome(firstPolynomeWord);
-        StringConverter.checkForPalynome(secondPolynomeWord);
-        StringConverter.checkForPalynome(thirdPolynomeWord);
-        StringConverter.checkForPalynome(fourthPolynomeWord);
-
-        System.out.println("\n4. Напишите программу,  в которой создается массив строк,  " +
+        System.out.println("4. Напишите программу,  в которой создается массив строк,  " +
                 "можно использовать строки, которые приведены выше в  задачах.\n");
-        String[] stringArrays = {firstSentence, secondSentence, thirdSentence, fourthSentence};
-        StringCharachterCount.changeStringArrays(stringArrays);
+        changeStringArrays(sentences);
 
-        System.out.println("\n5. Создайте массив строк, в котором перечислены все  наши ФИО");
+        System.out.println("5. Создайте массив строк, в котором перечислены все  наши ФИО");
         String[] employeeNames;
         employeeNames = new String[]{"Жулин Роман Геннадьевич",
                 "Шишляков Никита Евгеньевич",
@@ -63,13 +57,13 @@ public class StringTheme {
                 "Бычков Алексей Александрович",
                 "Степанова Оюна Борисовна"};
 
-        EmployeeProcessor.editEmployer(employeeNames);
+        editEmployer(employeeNames);
 
-        System.out.println("\n6. Код, который принимает строки,  " +
+        System.out.println("6. Код, который принимает строки,  " +
                 "и возвращает массив слов, из которых состоит строка, а так же количество слов в строке\n");
-        StringConverter.returnMassiveWord(stringArrays);
+        StringConverter.returnMassiveWord(sentences);
 
-        System.out.println("\n7. Напишите код, который в массиве строк находит пустую и " +
+        System.out.println("7. Напишите код, который в массиве строк находит пустую и " +
                 "пишет на какой позиции она находится\n");
         String firstSentenceWithNull = "Менеджер, программист  и тестировщик попали в ДТП, " +
                 "несясь с горы, из-за отказа  тормозов";
@@ -80,7 +74,7 @@ public class StringTheme {
                 fourthSentenceWithNull};
         StringConverter.findEmptyStrings(arrayWithNullStrings);
 
-        System.out.println("\n8. апишите метод, который принимает строку и заменяет все " +
+        System.out.println("8. апишите метод, который принимает строку и заменяет все " +
                 "вхождения одной подстроки на другую\n");
 
         StringConverter.replacesSomeStrings(arrayWithNullStrings, " ", "$$$");

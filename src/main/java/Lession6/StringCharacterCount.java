@@ -1,6 +1,6 @@
 package Lession6;
 
-public class StringCharachterCount {
+public class StringCharacterCount {
     public static void changeStringArrays(String[] stringArrays) {
 
         for (String stringArray : stringArrays) {
