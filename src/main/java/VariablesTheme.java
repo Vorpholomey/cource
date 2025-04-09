@@ -128,17 +128,17 @@ public class VariablesTheme {
         System.out.println("\n8. Манипуляции с сотнями, десятками и единицами: \n");
 
         int decManipulation = 543;
-        int decManipulationHungred = decManipulation / 100;
+        int decManipulationHundred = decManipulation / 100;
         int decManipulationTens = (decManipulation % 100) / 10;
-        int decManipulatonUnits = (decManipulation % 100) % 10;
+        int decManipulationUnits = (decManipulation % 100) % 10;
 
         System.out.println("Число " + decManipulation + " содержит:");
-        System.out.println("     сотен: " + decManipulationHungred );
+        System.out.println("     сотен: " + decManipulationHundred );
         System.out.println("     десятков: " + decManipulationTens );
-        System.out.println("     единиц: " + decManipulatonUnits );
-        System.out.println("Сумма разрядов: " + (decManipulationHungred + decManipulationTens + decManipulatonUnits));
+        System.out.println("     единиц: " + decManipulationUnits);
+        System.out.println("Сумма разрядов: " + (decManipulationHundred + decManipulationTens + decManipulationUnits));
         System.out.println("Произведение разрядов: "
-                + (decManipulationHungred * decManipulationTens * decManipulatonUnits));
+                + (decManipulationHundred * decManipulationTens * decManipulationUnits));
 
         System.out.println("\n9. Перевод секунд в часы, минуты и секунды ЧЧ:ММ:СС: \n");
 
