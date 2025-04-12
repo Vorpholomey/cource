@@ -12,6 +12,7 @@ public class Triangle implements PerimeterSquare {
     }
 
     public double getSideA() {
+
         return sideA;
     }
 
@@ -24,25 +25,29 @@ public class Triangle implements PerimeterSquare {
     }
 
     public void setSideB(double sideB) {
+
         this.sideB = sideB;
     }
 
     public double getSideC() {
+
         return sideC;
     }
 
     public void setSideC(double sideC) {
+
         this.sideC = sideC;
     }
 
     @Override
-    public double perimeter() {
+    public double getPerimeter() {
+
         return sideA + sideB + sideC;
     }
 
     @Override
-    public double square() {
-        double semiPerimeter = perimeter() / 2;
+    public double getSquare() {
+        double semiPerimeter = getPerimeter() / 2;
         return Math.sqrt(semiPerimeter * (semiPerimeter - sideA) * (semiPerimeter - sideB) * (semiPerimeter - sideC));
     }
 }

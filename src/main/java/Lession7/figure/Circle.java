@@ -17,12 +17,12 @@ public class Circle implements PerimeterSquare {
     }
 
     @Override
-    public double perimeter() {
+    public double getPerimeter() {
         return Math.PI * 2 * radius;
     }
 
     @Override
-    public double square() {
+    public double getSquare() {
         return Math.PI * radius * radius;
     }
 }

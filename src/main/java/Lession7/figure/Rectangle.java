@@ -26,12 +26,12 @@ public class Rectangle implements PerimeterSquare {
     }
 
     @Override
-    public double perimeter() {
+    public double getPerimeter() {
         return sideA * 2 + sideB * 2;
     }
 
     @Override
-    public double square() {
+    public double getSquare() {
         return sideA * sideB;
     }
 }

@@ -1,7 +1,7 @@
 package Lession7.figure;
 
 public interface PerimeterSquare {
-    public double perimeter();
+    double getPerimeter();
 
-    public double square();
+    double getSquare();
 }
